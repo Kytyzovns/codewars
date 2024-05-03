@@ -9,19 +9,19 @@
 
 //SOLUTION:
 function solution(number){
-    var numbers = [];
-    var sum = 0;
-    var k = 0;
+    let numbers = [];
+    let sum = 0;
+    let k = 0;
     number--;
     if(number >= 0) {
-        for(var i = number; i > 2; i--) {
+        for(let i = number; i > 2; i--) {
             if(i % 3 === 0 || i % 5 === 0) {
                 numbers[k] = i;
                 k++;
             }
         }
 
-        for(var j = 0; j < numbers.length; j++) {
+        for(let j = 0; j < numbers.length; j++) {
             sum += numbers[j];
         }
         return sum;
