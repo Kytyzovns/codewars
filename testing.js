@@ -1,10 +1,9 @@
-const kok = [
-    {kek: 1},
-    {kek2: 2},
-    {kek3: 3},
-    {kek3: 4},
-    {kek5: 5}
-]
+const numbers = [1, 5, 10, 35, 45, 100, 25];
 
-let kekkok = [...kok]
-console.log(kekkok);
+const min = numbers.reduce((acc, currentNumber) => {
+    console.log(acc);
+    console.log(currentNumber);
+    return acc;
+});
+
+console.log(min);
