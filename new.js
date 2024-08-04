@@ -42,3 +42,4 @@ function dividedBy(num) {
     return `/ ${num}`
 }
 
+console.log("result");
