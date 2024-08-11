@@ -35,4 +35,3 @@ function orderWeight(string) {
     return res.join(" ")
 }
 
-console.log(orderWeight("11 11 2000 10003 22 123 1234000 44444444 9999"))
