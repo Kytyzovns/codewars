@@ -1,11 +1,6 @@
-const fn = [1, 2 , 4]
-const fn = [1, 2 , 4]
-const fn = [1, 2 , 4]
-const fn = [1, 2 , 4]
-const fn = [1, 2 , 4]
-const fn = [1, 2 , 4]
-const fn = [1, 2 , 4]
-
+const i = undefined
+const a = i && 2
+console.log(a)
 
 
 
