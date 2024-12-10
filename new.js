@@ -1,18 +1,26 @@
-function domainName(url){
-    //your code here
-    let dots = []
-    let slash = []
-    for( let i = 0; i < url.length; i++){
-        if(url[i] === "/") slash.push(i)
-        if (url[i] === ".") dots.push(i)
+function smallest(n) {
+    let res = [n, 0, 0]
+    n = n.toString()
+    let small = 0
+    let big = 0
+    let end = false
+    for(let i = 0; i<n.length-1; i++) {
+        for(let j = i+1; j<n.length; j++) {
+            if(Number(n[i])>Number(n[j]) || Number(n[j])<Number(n[small])){
+                small = j
+                big = i
+                console.log(small, big)
+                end = true
+            }
+        }
+        if(end) break
     }
-    if(url.slice(dots[0] - 3, dots[0] + 1) === "www.") {
-        return url.slice(dots[0] + 1, dots[1])
-    } else if((slash[1] - slash[0]) !== 1) {
-        return url.slice(0, dots[0])
+    n = n.slice(0, big) + n[small] + n.slice(big, small) + n.slice(small+1)
+    if(small - big === 1) {
+        return [Number(n), small, big]
     } else {
-        return url.slice(slash[1] + 1, dots[0])
+        return [Number(n), big, small]
     }
 }
 
-console.log(domainName("http://google.com"));
+smallest(261235)
