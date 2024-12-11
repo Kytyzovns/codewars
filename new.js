@@ -1,26 +1,18 @@
 function smallest(n) {
+    let str = n.toString()
     let res = [n, 0, 0]
-    n = n.toString()
-    let small = 0
-    let big = 0
-    let end = false
-    for(let i = 0; i<n.length-1; i++) {
-        for(let j = i+1; j<n.length; j++) {
-            if(Number(n[i])>Number(n[j]) || Number(n[j])<Number(n[small])){
-                small = j
-                big = i
-                console.log(small, big)
-                end = true
+
+    for(let i = 0; i < str.length; i++) {
+        let rem = str.slice(0, i) + str.slice(i+1)
+        for(let j = 0; j < rem.length+1; j++) {
+            let newStr = rem.slice(0, j) + str[i] + rem.slice(j);
+            if (Number(newStr) < res[0]) {
+                res = [newStr, i, j]
             }
         }
-        if(end) break
     }
-    n = n.slice(0, big) + n[small] + n.slice(big, small) + n.slice(small+1)
-    if(small - big === 1) {
-        return [Number(n), small, big]
-    } else {
-        return [Number(n), big, small]
-    }
+
+    return res
 }
 
-smallest(261235)
+console.log(smallest(935855753))
